@@ -73,7 +73,6 @@ function addTransaction() {
   text.value = "";
   amount.value = "";
 }
-
 function deleteTransaction(index) {
 
   transactions.splice(index, 1);
