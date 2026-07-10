@@ -51,25 +51,20 @@ function renderTransactions() {
 
     transactionList.appendChild(li);
   });
-
   updateValues();
 }
 
 function addTransaction() {
-
   if (text.value.trim() === "" || amount.value.trim() === "") {
     alert("Please fill all fields");
     return;
   }
-
   transactions.push({
     text: text.value,
     amount: Number(amount.value)
   });
-
   saveData();
   renderTransactions();
-
   text.value = "";
   amount.value = "";
 }
