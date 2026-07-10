@@ -13,42 +13,31 @@ function saveData() {
 }
 
 function updateValues() {
-
   const amounts = transactions.map(item => item.amount);
-
   const total = amounts.reduce((acc, item) => acc + item, 0);
-
   const incomeTotal = amounts
     .filter(item => item > 0)
     .reduce((acc, item) => acc + item, 0);
-
   const expenseTotal = amounts
     .filter(item => item < 0)
     .reduce((acc, item) => acc + item, 0);
-
   balance.innerText = `₹${total}`;
   income.innerText = `₹${incomeTotal}`;
   expense.innerText = `₹${Math.abs(expenseTotal)}`;
 }
 
 function renderTransactions() {
-
   transactionList.innerHTML = "";
-
   transactions.forEach((transaction, index) => {
-
     const li = document.createElement("li");
-
     li.innerHTML = `
       <span>
         ${transaction.text} : ₹${transaction.amount}
       </span>
-
       <button class="delete-btn" onclick="deleteTransaction(${index})">
         X
       </button>
     `;
-
     transactionList.appendChild(li);
   });
   updateValues();
