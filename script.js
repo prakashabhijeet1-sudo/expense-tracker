@@ -7,7 +7,6 @@ const addBtn = document.getElementById("addBtn");
 const transactionList = document.getElementById("transactionList");
 
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
-
 function saveData() {
   localStorage.setItem("transactions", JSON.stringify(transactions));
 }
