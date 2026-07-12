@@ -57,13 +57,9 @@ function addTransaction() {
   amount.value = "";
 }
 function deleteTransaction(index) {
-
   transactions.splice(index, 1);
-
   saveData();
   renderTransactions();
 }
-
 addBtn.addEventListener("click", addTransaction);
-
 renderTransactions();
