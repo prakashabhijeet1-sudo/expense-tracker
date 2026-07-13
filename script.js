@@ -10,7 +10,6 @@ let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 function saveData() {
   localStorage.setItem("transactions", JSON.stringify(transactions));
 }
-
 function updateValues() {
   const amounts = transactions.map(item => item.amount);
   const total = amounts.reduce((acc, item) => acc + item, 0);
@@ -24,7 +23,6 @@ function updateValues() {
   income.innerText = `₹${incomeTotal}`;
   expense.innerText = `₹${Math.abs(expenseTotal)}`;
 }
-
 function renderTransactions() {
   transactionList.innerHTML = "";
   transactions.forEach((transaction, index) => {
@@ -41,7 +39,6 @@ function renderTransactions() {
   });
   updateValues();
 }
-
 function addTransaction() {
   if (text.value.trim() === "" || amount.value.trim() === "") {
     alert("Please fill all fields");
