@@ -23,7 +23,6 @@ function updateValues() {
   income.innerText = `₹${incomeTotal}`;
   expense.innerText = `₹${Math.abs(expenseTotal)}`;
 }
-
 function renderTransactions() {
   transactionList.innerHTML = "";
   transactions.forEach((transaction, index) => {
